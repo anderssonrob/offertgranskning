@@ -1,0 +1,6 @@
+@Offertgranskning.Api_HostAddress = http://localhost:5049
+
+GET {{Offertgranskning.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
