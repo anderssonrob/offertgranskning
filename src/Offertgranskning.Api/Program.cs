@@ -1,6 +1,10 @@
+using Offertgranskning.Api.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOpenApi();
+builder.Services.RegisterApplicationServices()
+    .RegisterDomainServices()
+    .RegisterPersistenceServices();
 
 var app = builder.Build();
 
