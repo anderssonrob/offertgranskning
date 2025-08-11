@@ -1,4 +1,5 @@
-using Offertgranskning.Api.Configuration;
+using Offertgranskning.Api.Infrastructure.Configuration;
+using Offertgranskning.Api.Infrastructure.Configuration.Slices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,14 +12,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.UseDeveloperExceptionPage();
 }
-else
-{
-    app.UseExceptionHandler();
-}
+
+app.UseExceptionHandler();
 
 app.UseHttpsRedirection();
 app.UseStatusCodePages();
+
+app.MapSliceEndpoints();
 
 app.Run();
