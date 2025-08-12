@@ -6,22 +6,22 @@ using Offertgranskning.API.Shared.Exceptions;
 
 namespace Offertgranskning.UnitTests.Slices;
 
-public class PlaceOrderTests
+public class UploadMetadataTests
 {
-    private readonly PlaceOrder.PlaceOrderRequestValidator _validator = new();
+    private readonly UploadMetadata.UploadMetadataRequestValidator _validator = new();
 
     [Fact]
     public async Task handler_should_return_ok_when_valid_request()
     {
         // Arrange
         var validCustomer = new Customer("John", "Doe", "john.doe@acme.it");
-        var request = new PlaceOrder.PlaceOrderRequest(Package.Basic, validCustomer);
+        var request = new UploadMetadata.UploadMetadataRequest(Package.Basic, validCustomer);
 
         // Act
-        var result = await PlaceOrder.Handler(request, CancellationToken.None);
+        var result = await UploadMetadata.Handler(request, CancellationToken.None);
 
         // Assert
-        Assert.IsType<Ok<PlaceOrder.PlaceOrderResponse>>(result);
+        Assert.IsType<Ok<UploadMetadata.UploadMetadataResponse>>(result);
     }
     
     [Fact]
@@ -29,13 +29,13 @@ public class PlaceOrderTests
     {
         // Arrange
         var validCustomer = new Customer("John", "Doe", "john.doe@acme.it");
-        var request = new PlaceOrder.PlaceOrderRequest(Package.Basic, validCustomer);
+        var request = new UploadMetadata.UploadMetadataRequest(Package.Basic, validCustomer);
 
         // Act
-        var result = await PlaceOrder.Handler(request, CancellationToken.None);
+        var result = await UploadMetadata.Handler(request, CancellationToken.None);
 
         // Assert
-        var okResult = (Ok<PlaceOrder.PlaceOrderResponse>)result;
+        var okResult = (Ok<UploadMetadata.UploadMetadataResponse>)result;
         Assert.NotNull(okResult.Value);
     }
     
@@ -45,14 +45,14 @@ public class PlaceOrderTests
     {
         // Arrange
         var validCustomer = new Customer("John", "Doe", "john.doe@acme.it");
-        var request = new PlaceOrder.PlaceOrderRequest(Package.Basic, validCustomer);
+        var request = new UploadMetadata.UploadMetadataRequest(Package.Basic, validCustomer);
 
         // Act
-        var result = await PlaceOrder.Handler(request, CancellationToken.None);
+        var result = await UploadMetadata.Handler(request, CancellationToken.None);
 
         // Assert
-        var okResult = (Ok<PlaceOrder.PlaceOrderResponse>)result;
-        Assert.Equal("The order has been placed.", okResult.Value.Message);
+        var okResult = (Ok<UploadMetadata.UploadMetadataResponse>)result;
+        Assert.Equal("The metadata has been uploaded.", okResult.Value.Message);
     }
     
     [Fact]
@@ -60,13 +60,13 @@ public class PlaceOrderTests
     {
         // Arrange
         var validCustomer = new Customer("John", "Doe", "john.doe@acme.it");
-        var request = new PlaceOrder.PlaceOrderRequest(Package.Basic, validCustomer);
+        var request = new UploadMetadata.UploadMetadataRequest(Package.Basic, validCustomer);
 
         // Act
-        var result = await PlaceOrder.Handler(request, CancellationToken.None);
+        var result = await UploadMetadata.Handler(request, CancellationToken.None);
 
         // Assert
-        var okResult = (Ok<PlaceOrder.PlaceOrderResponse>)result;
+        var okResult = (Ok<UploadMetadata.UploadMetadataResponse>)result;
         Assert.NotEqual(Guid.Empty, okResult.Value.CorrelationId);
     }
     
@@ -74,10 +74,10 @@ public class PlaceOrderTests
     public async Task handler_should_throw_validation_exception_when_invalid_request()
     {
         // Arrange
-        var invalidRequest = new PlaceOrder.PlaceOrderRequest((Package)999, null!);
+        var invalidRequest = new UploadMetadata.UploadMetadataRequest((Package)999, null!);
 
         // Act & Assert
-        await Assert.ThrowsAsync<ValidationException>(() => PlaceOrder.Handler(invalidRequest, CancellationToken.None));
+        await Assert.ThrowsAsync<ValidationException>(() => UploadMetadata.Handler(invalidRequest, CancellationToken.None));
     }
     
     [Theory]
@@ -87,7 +87,7 @@ public class PlaceOrderTests
     {
         // Arrange
         var validCustomer = new Customer("John", "Doe", "john.doe@came.it");
-        var request = new PlaceOrder.PlaceOrderRequest(package, validCustomer);
+        var request = new UploadMetadata.UploadMetadataRequest(package, validCustomer);
 
         // Act
         var result = _validator.TestValidate(request);
@@ -101,7 +101,7 @@ public class PlaceOrderTests
     {
         // Arrange
         var validCustomer = new Customer("John", "Doe", "john.doe@came.it");
-        var request = new PlaceOrder.PlaceOrderRequest((Package)999, validCustomer);
+        var request = new UploadMetadata.UploadMetadataRequest((Package)999, validCustomer);
 
         // Act
         var result = _validator.TestValidate(request);
@@ -115,7 +115,7 @@ public class PlaceOrderTests
     public void validator_should_have_error_when_customer_is_null()
     {
         // Arrange
-        var request = new PlaceOrder.PlaceOrderRequest(Package.Basic, null!);
+        var request = new UploadMetadata.UploadMetadataRequest(Package.Basic, null!);
 
         // Act
         var result = _validator.TestValidate(request);
@@ -129,7 +129,7 @@ public class PlaceOrderTests
     {
         // Arrange
         var validCustomer = new Customer("John", "Doe", "john.doe@acme.it");
-        var request = new PlaceOrder.PlaceOrderRequest(Package.Basic, validCustomer);
+        var request = new UploadMetadata.UploadMetadataRequest(Package.Basic, validCustomer);
 
         // Act
         var result = _validator.TestValidate(request);
@@ -143,7 +143,7 @@ public class PlaceOrderTests
     {
         // Arrange
         var validCustomer = new Customer("John", "Doe", "john.doe@acme.it");
-        var request = new PlaceOrder.PlaceOrderRequest(Package.Basic, validCustomer);
+        var request = new UploadMetadata.UploadMetadataRequest(Package.Basic, validCustomer);
 
         // Act
         var result = await _validator.ValidateAsync(request);
@@ -157,7 +157,7 @@ public class PlaceOrderTests
     public async Task validator_should_return_errors_when_request_is_invalid() 
     {
         // Arrange
-        var request = new PlaceOrder.PlaceOrderRequest((Package)999, null!);
+        var request = new UploadMetadata.UploadMetadataRequest((Package)999, null!);
 
         // Act
         var result = await _validator.ValidateAsync(request);

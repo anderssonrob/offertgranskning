@@ -5,18 +5,18 @@ using ValidationException = Offertgranskning.API.Shared.Exceptions.ValidationExc
 
 namespace Offertgranskning.API.Features.Orders;
 
-public sealed class PlaceOrder : Slice
+public sealed class UploadMetadata : Slice
 {
     public override void AddEndpoint(IEndpointRouteBuilder endpointRouteBuilder)
     {
-        endpointRouteBuilder.MapPost("api/orders/place-order", Handler)
-            .WithName("PlaceOrder")
+        endpointRouteBuilder.MapPost("api/orders/upload-metadata", Handler)
+            .WithName("UploadMetadata")
             .WithTags("Orders");
     }
 
-    public static async Task<IResult> Handler(PlaceOrderRequest request, CancellationToken cancellationToken)
+    public static async Task<IResult> Handler(UploadMetadataRequest request, CancellationToken cancellationToken)
     {
-        var validator = new PlaceOrderRequestValidator();
+        var validator = new UploadMetadataRequestValidator();
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
         if (validationResult.IsValid == false)
@@ -29,17 +29,17 @@ public sealed class PlaceOrder : Slice
         
         // TODO: send request with correlation-id to message-broker
         
-        var response = new PlaceOrderResponse("The order has been placed.", correlationId);
+        var response = new UploadMetadataResponse("The metadata has been uploaded.", correlationId);
         
         return await Task.FromResult(Results.Ok(response));
     }
 
-    public sealed record PlaceOrderRequest(Package Package, Customer Customer);
-    public sealed record PlaceOrderResponse(string Message, Guid CorrelationId);
+    public sealed record UploadMetadataRequest(Package Package, Customer Customer);
+    public sealed record UploadMetadataResponse(string Message, Guid CorrelationId);
 
-    public sealed class PlaceOrderRequestValidator : AbstractValidator<PlaceOrderRequest>
+    public sealed class UploadMetadataRequestValidator : AbstractValidator<UploadMetadataRequest>
     {
-        public PlaceOrderRequestValidator()
+        public UploadMetadataRequestValidator()
         {
             RuleFor(x => x.Package)
                 .IsInEnum()
