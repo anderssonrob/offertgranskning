@@ -1,7 +1,6 @@
 using FluentValidation;
 using Offertgranskning.API.Infrastructure.Configuration.Slices;
 using Offertgranskning.API.Shared.Domain.Models;
-using Exceptions_ValidationException = Offertgranskning.API.Shared.Exceptions.ValidationException;
 using ValidationException = Offertgranskning.API.Shared.Exceptions.ValidationException;
 
 namespace Offertgranskning.API.Features.Orders;
@@ -23,7 +22,7 @@ public sealed class PlaceOrder : Slice
         if (validationResult.IsValid == false)
         {
             // TODO: in globalExceptionHandler.cs, should we really expost traceid?
-            throw new Exceptions_ValidationException(validationResult);
+            throw new ValidationException(validationResult);
         }
         
         var correlationId = Guid.NewGuid();
@@ -40,8 +39,6 @@ public sealed class PlaceOrder : Slice
 
     public sealed class PlaceOrderRequestValidator : AbstractValidator<PlaceOrderRequest>
     {
-        // TODO - add validation, depending on package, for IFormCollection
-        
         public PlaceOrderRequestValidator()
         {
             RuleFor(x => x.Package)
@@ -49,10 +46,9 @@ public sealed class PlaceOrder : Slice
                 .WithMessage("Package must be Basic or Compare");
 
             RuleFor(x => x.Customer)
+                .NotNull()
+                .WithMessage("Customer is required")
                 .SetValidator(new CustomerValidator());
-            
-            
-
         }
     }
 }
