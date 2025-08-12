@@ -1,8 +1,8 @@
 using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
-using Offertgranskning.Api.Shared.Exceptions;
+using Offertgranskning.API.Shared.Exceptions;
 
-namespace Offertgranskning.Api.Infrastructure.Middleware;
+namespace Offertgranskning.API.Infrastructure.Middleware;
 
 public sealed class GlobalExceptionHandler : IExceptionHandler
 {

@@ -1,5 +1,5 @@
-using Offertgranskning.Api.Infrastructure.Configuration;
-using Offertgranskning.Api.Infrastructure.Configuration.Slices;
+using Offertgranskning.API.Infrastructure.Configuration;
+using Offertgranskning.API.Infrastructure.Configuration.Slices;
 
 var builder = WebApplication.CreateBuilder(args);
 

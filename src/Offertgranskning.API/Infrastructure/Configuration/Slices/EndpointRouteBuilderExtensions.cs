@@ -1,4 +1,4 @@
-namespace Offertgranskning.Api.Infrastructure.Configuration.Slices;
+namespace Offertgranskning.API.Infrastructure.Configuration.Slices;
 
 public static class EndpointRouteBuilderExtensions
 {

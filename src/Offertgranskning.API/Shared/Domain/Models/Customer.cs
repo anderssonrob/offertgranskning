@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Offertgranskning.Api.Shared.Domain.Models;
+namespace Offertgranskning.API.Shared.Domain.Models;
 
 public sealed record Customer(string FirstName, string LastName, string Email);
 

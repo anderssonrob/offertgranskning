@@ -1,6 +1,6 @@
 using FluentValidation.Results;
 
-namespace Offertgranskning.Api.Shared.Exceptions;
+namespace Offertgranskning.API.Shared.Exceptions;
 
 public sealed class ValidationException : Exception
 {

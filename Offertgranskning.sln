@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.Api", "src\Offertgranskning.Api\Offertgranskning.Api.csproj", "{13FC774E-E076-4597-A628-7925C316B40B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.API", "src\Offertgranskning.API\Offertgranskning.API.csproj", "{EF6645E5-A0BF-4400-8B46-7DCA674A8350}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +12,9 @@ Global
 		{13FC774E-E076-4597-A628-7925C316B40B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13FC774E-E076-4597-A628-7925C316B40B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13FC774E-E076-4597-A628-7925C316B40B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6645E5-A0BF-4400-8B46-7DCA674A8350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6645E5-A0BF-4400-8B46-7DCA674A8350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6645E5-A0BF-4400-8B46-7DCA674A8350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6645E5-A0BF-4400-8B46-7DCA674A8350}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

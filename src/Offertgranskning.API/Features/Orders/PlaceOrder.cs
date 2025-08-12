@@ -1,10 +1,10 @@
 using FluentValidation;
-using Offertgranskning.Api.Infrastructure.Configuration.Slices;
-using Offertgranskning.Api.Shared.Domain.Models;
+using Offertgranskning.API.Infrastructure.Configuration.Slices;
+using Offertgranskning.API.Shared.Domain.Models;
+using Exceptions_ValidationException = Offertgranskning.API.Shared.Exceptions.ValidationException;
+using ValidationException = Offertgranskning.API.Shared.Exceptions.ValidationException;
 
-using ValidationException = Offertgranskning.Api.Shared.Exceptions.ValidationException;
-
-namespace Offertgranskning.Api.Features.Orders;
+namespace Offertgranskning.API.Features.Orders;
 
 public sealed class PlaceOrder : Slice
 {
@@ -23,7 +23,7 @@ public sealed class PlaceOrder : Slice
         if (validationResult.IsValid == false)
         {
             // TODO: in globalExceptionHandler.cs, should we really expost traceid?
-            throw new ValidationException(validationResult);
+            throw new Exceptions_ValidationException(validationResult);
         }
         
         var correlationId = Guid.NewGuid();
