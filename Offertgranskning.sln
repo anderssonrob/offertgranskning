@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.UnitTests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.IntegrationTests", "tests\Offertgranskning.IntegrationTests\Offertgranskning.IntegrationTests.csproj", "{87B986A8-08B8-4DA2-B5EA-802DF44A6474}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspire", "Aspire", "{F0F2B1A1-FB74-49A1-A445-35BB688B8261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.AppHost", "src\Offertgranskning.AppHost\Offertgranskning.AppHost.csproj", "{0D201837-669D-45E8-8360-BD2B362541B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +32,12 @@ Global
 		{87B986A8-08B8-4DA2-B5EA-802DF44A6474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87B986A8-08B8-4DA2-B5EA-802DF44A6474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87B986A8-08B8-4DA2-B5EA-802DF44A6474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D201837-669D-45E8-8360-BD2B362541B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D201837-669D-45E8-8360-BD2B362541B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D201837-669D-45E8-8360-BD2B362541B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D201837-669D-45E8-8360-BD2B362541B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D201837-669D-45E8-8360-BD2B362541B0} = {F0F2B1A1-FB74-49A1-A445-35BB688B8261}
 	EndGlobalSection
 EndGlobal

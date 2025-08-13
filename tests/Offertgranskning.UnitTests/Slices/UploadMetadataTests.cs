@@ -52,7 +52,7 @@ public class UploadMetadataTests
 
         // Assert
         var okResult = (Ok<UploadMetadata.UploadMetadataResponse>)result;
-        Assert.Equal("The metadata has been uploaded.", okResult.Value.Message);
+        Assert.Equal("The metadata has been uploaded.", okResult.Value?.Message);
     }
     
     [Fact]
@@ -67,7 +67,7 @@ public class UploadMetadataTests
 
         // Assert
         var okResult = (Ok<UploadMetadata.UploadMetadataResponse>)result;
-        Assert.NotEqual(Guid.Empty, okResult.Value.CorrelationId);
+        Assert.NotEqual(Guid.Empty, okResult.Value?.CorrelationId);
     }
     
     [Fact]
