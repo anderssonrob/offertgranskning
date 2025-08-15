@@ -15,4 +15,8 @@
       <Folder Include="Shared\Persistence\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Offertgranskning.ServiceDefaults\Offertgranskning.ServiceDefaults.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -3,6 +3,8 @@ using Offertgranskning.API.Infrastructure.Configuration.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 builder.Services.RegisterApplicationServices()
     .RegisterDomainServices()
     .RegisterPersistenceServices();

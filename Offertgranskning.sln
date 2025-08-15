@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.AppHost", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.ServiceDefaults", "src\Offertgranskning.ServiceDefaults\Offertgranskning.ServiceDefaults.csproj", "{01C946F3-0760-4097-8FE6-5990135639F8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B6D0DD6E-C667-45BE-8F80-01CB2AF161EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,5 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0D201837-669D-45E8-8360-BD2B362541B0} = {F0F2B1A1-FB74-49A1-A445-35BB688B8261}
 		{01C946F3-0760-4097-8FE6-5990135639F8} = {F0F2B1A1-FB74-49A1-A445-35BB688B8261}
+		{87B986A8-08B8-4DA2-B5EA-802DF44A6474} = {B6D0DD6E-C667-45BE-8F80-01CB2AF161EA}
+		{526437A0-FB21-4DC8-8A4E-273707DD05E3} = {B6D0DD6E-C667-45BE-8F80-01CB2AF161EA}
 	EndGlobalSection
 EndGlobal
