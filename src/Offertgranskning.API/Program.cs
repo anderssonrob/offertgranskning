@@ -21,6 +21,7 @@ app.UseExceptionHandler();
 app.UseHttpsRedirection();
 app.UseStatusCodePages();
 
+app.MapDefaultEndpoints();
 app.MapEndpoints();
 
 app.Run();
