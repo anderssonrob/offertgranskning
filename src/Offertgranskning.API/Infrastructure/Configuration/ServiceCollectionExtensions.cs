@@ -1,4 +1,4 @@
-using Offertgranskning.API.Infrastructure.Configuration.Slices;
+using Offertgranskning.API.Infrastructure.Configuration.Endpoints;
 using Offertgranskning.API.Infrastructure.Middleware;
 
 namespace Offertgranskning.API.Infrastructure.Configuration;
@@ -12,7 +12,7 @@ public static class ServiceCollectionExtensions
 
         services.AddOpenApi();
         
-        services.RegisterSlices();
+        services.RegisterEndpoints();
         
         return services;
     }

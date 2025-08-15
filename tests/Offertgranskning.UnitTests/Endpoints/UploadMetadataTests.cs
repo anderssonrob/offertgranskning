@@ -4,7 +4,7 @@ using Offertgranskning.API.Features.Orders;
 using Offertgranskning.API.Shared.Domain.Models;
 using Offertgranskning.API.Shared.Exceptions;
 
-namespace Offertgranskning.UnitTests.Slices;
+namespace Offertgranskning.UnitTests.Endpoints;
 
 public class UploadMetadataTests
 {

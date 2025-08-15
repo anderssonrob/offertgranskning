@@ -1,5 +1,5 @@
 using Offertgranskning.API.Infrastructure.Configuration;
-using Offertgranskning.API.Infrastructure.Configuration.Slices;
+using Offertgranskning.API.Infrastructure.Configuration.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +19,6 @@ app.UseExceptionHandler();
 app.UseHttpsRedirection();
 app.UseStatusCodePages();
 
-app.MapSliceEndpoints();
+app.MapEndpoints();
 
 app.Run();

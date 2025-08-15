@@ -1,11 +1,12 @@
 using FluentValidation;
-using Offertgranskning.API.Infrastructure.Configuration.Slices;
 using Offertgranskning.API.Shared.Domain.Models;
+
+using Endpoint = Offertgranskning.API.Infrastructure.Configuration.Endpoints.Endpoint;
 using ValidationException = Offertgranskning.API.Shared.Exceptions.ValidationException;
 
 namespace Offertgranskning.API.Features.Orders;
 
-public sealed class UploadMetadata : Slice
+public sealed class UploadMetadata : Endpoint
 {
     public override void AddEndpoint(IEndpointRouteBuilder endpointRouteBuilder)
     {
