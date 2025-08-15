@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspire", "Aspire", "{F0F2B1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.AppHost", "src\Offertgranskning.AppHost\Offertgranskning.AppHost.csproj", "{0D201837-669D-45E8-8360-BD2B362541B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offertgranskning.ServiceDefaults", "src\Offertgranskning.ServiceDefaults\Offertgranskning.ServiceDefaults.csproj", "{01C946F3-0760-4097-8FE6-5990135639F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,8 +38,13 @@ Global
 		{0D201837-669D-45E8-8360-BD2B362541B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D201837-669D-45E8-8360-BD2B362541B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D201837-669D-45E8-8360-BD2B362541B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C946F3-0760-4097-8FE6-5990135639F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C946F3-0760-4097-8FE6-5990135639F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C946F3-0760-4097-8FE6-5990135639F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C946F3-0760-4097-8FE6-5990135639F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0D201837-669D-45E8-8360-BD2B362541B0} = {F0F2B1A1-FB74-49A1-A445-35BB688B8261}
+		{01C946F3-0760-4097-8FE6-5990135639F8} = {F0F2B1A1-FB74-49A1-A445-35BB688B8261}
 	EndGlobalSection
 EndGlobal
